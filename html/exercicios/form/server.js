@@ -9,8 +9,14 @@ app.use(bodyParser.json())
 
 
 app.post('/usuarios', (req, resp) => {
+    console.log(req.params.id)    
     console.log(req.body)    
-    resp.send('<h1>Parabens</h1>')
+    resp.send('<h1>Parabens usuário incluído</h1>')
+})
+
+app.post('/usuarios/:id', (req, resp) => {
+    console.log(req.body)    
+    resp.send('<h1>Parabens, Usuário Alterado</h1>')
 })
 
 app.listen(port, () => console.log(`Listen on port ${port}`))
