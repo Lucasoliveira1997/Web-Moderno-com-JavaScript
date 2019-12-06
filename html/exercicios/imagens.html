@@ -40,19 +40,25 @@
 <script>
     let imagens = document.querySelectorAll('p')
     
-    indice = 0
-    imagens[indice].style.display = "block"
-    imagens[indice].style.marginLeft = 1000
+    let move = () => {
+        let pixels = 1500
+        let indice = 0
 
-    imagens.forEach((imagem) => {
-        if(imagens[indice].style.marginLeft > 0) {
-            imagens[indice].style.marginLeft -= 1
-            console.log('aqui')            
-        }        
-        else {
-            indice++
-        }
-    })        
+        imagens[indice].style.display = "block"
+        imagens[indice].style.left = pixels
+
+        setInterval(() => {
+            pixels -= 5 
+            imagens[indice].style.left = pixels+"px"
+            if(pixels <= 100) {
+                imagens[indice].style.display = "none"
+                console.log(indice)                      
+            }       
+        }, 50)
+    }
+
+    move()
+
 </script>
 
 <style>
