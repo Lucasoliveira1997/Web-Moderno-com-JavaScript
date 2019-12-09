@@ -4,9 +4,7 @@
 </video>
 
 <div wm-progresso="meuVideo" class="progresso">
-    <div>
-
-    </div>
+    <div></div>
 </div>
 
 <div>
@@ -33,7 +31,11 @@
         video.pause()        
     })
 
-    barProgress.addEventListener("dblclick")
+    setInterval(() => {      
+        let percentual = (video.currentTime / video.duration) * 100
+        let div = document.querySelector('[wm-progresso] > div')        
+        div.style.width = `${percentual}%`
+    }, 250);
 
 </script>
 
