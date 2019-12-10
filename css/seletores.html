@@ -6,7 +6,27 @@
     <title>CSS Selectors</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        /* * - usado para aplicar css a todo a pagina */
+        /*.tag - usado para selecionar apenas a classe tag*/
+        /*#aprovados - usado para selecionar pelo id aprovados*/
+        /*#aninhado > div - usado para acessar a div que é filha direta de aninhado*/
+        /*#aninhado section - usado para acessar a section que é filha indireta de aninhado*/
+        /*p + ul - usado para acessar um irmão direto de mesmo nivel que p = ul*/
+        /*p ~ ol - usado para acessar um irmão indireto de mesmo nivel que p = ol*/
+        /*[feira] - usado para acessar um atributo*/
+        /*[feira=casa] - usado para acessar um atributo com valor especifico*/
+        /*[feira~=escritorio] - usado para acessar atributo que contenha "escritorio"*/
+        /*[feira*=sa] - usado para acessar atributo que contenha "sa"*/
+        /*span:nth-child(1) - usado para acessar algum atributo onde span seja o primeiro filho*/
+        /*section > :nth-child(odd) - usado para acessar alguma section onde o filho seja impar*/
+        /*section > :nth-child(even) - usado para acessar alguma section onde o filho seja par*/
+        /*section > :nth-child(even), ul, p - mesmo que acima, e ainda adiciona o mesmo ao ul e ao p*/
+        /* section > :nth-child(even) label usado para acessar algum label em uma section onde o filho seja par*/
+
+        section > span:nth-of-type(2) {
+            color: rgb(255, 251, 0);
+            background-color: orangered;
+        }
     </style>
 </head>
 
@@ -29,7 +49,7 @@
             </ol>
             <div id='aninhado' class='tag'>
                 <div class="tag">
-                    <section class='tag'>
+                    <section class='tag nolabel'>
                         <span class='tag'>1</span>
                         <p class='tag'>2</p>
                         <span class='tag'>3</span>
