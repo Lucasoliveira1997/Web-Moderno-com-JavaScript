@@ -5,7 +5,64 @@
     <meta charset="UTF-8">
     <title>Position</title>
     <style>
-        /* ... */
+        div {
+            font-size: 60px;
+            padding: 30px;
+            border: solid #222 5px ;
+        }
+
+        .static {
+            top: 100px;
+            left: 100px;
+            background-color: wheat;
+        }
+
+        .fixed { 
+            /*Não acompanha a rolagem da página*/
+            position: fixed;
+            bottom: 30px;
+            right: 0px;
+            background-color: aquamarine;
+        }
+
+        .relative1 {
+            position: relative;
+            left: 50px;
+            top: 5px;
+            background-color: darksalmon;
+        }
+
+        .absolute1 {
+            position: absolute;
+            left: 350px;
+            top: 120px;
+            background-color: darkseagreen;
+        }
+
+        .relative2 {
+            position: relative;
+            left: 250px;
+            top: 2000px;
+            width: 200px;
+            height: 200px;
+            background-color: gray;            
+        }
+
+        .absolute2 {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: green;
+        }
+
+        .sticky {
+            position: -webkit-sticky; /*para o safari*/
+            position: sticky;
+            background-color: lightgoldenrodyellow;
+            top: 0px;
+        }
     </style>
 </head>
 
