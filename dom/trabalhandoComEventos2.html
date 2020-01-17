@@ -9,7 +9,15 @@
 
 <body class="conteudo exercicio">
     <div>Elemento</div>
+
     <script>
-        // ...
+        let div = document.querySelector('div')
+
+        div.style.position = 'absolute'    
+
+        div.onmousemove = e => {
+            div.style.cursor = 'move'
+            if(e.buttons)
+        }
     </script>
 </body>
