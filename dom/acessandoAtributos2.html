@@ -17,7 +17,25 @@
         </ul>
     </div>
     <script>
-        // ...
+        //const lista = document.querySelector('#compras')
+        const lista = document.querySelector('div ul[destino="escritório"]')
+        console.log(lista)        
+
+        console.log(`ChildNodes ${lista.childNodes}`)
+        console.log(`ID ${lista.id}`);
+        console.log(`Destino ${lista.destino}`);
+        console.log(`Atributo ${lista.getAttribute('destino')}`)
+        lista.hasAttribute('data-urgencia')
+        lista.setAttribute('data-urgencia', 'data-limite')
+        lista.setAttribute('status', 'aberto')
+        lista.removeAttribute('status')
+        
+        //cuidado
+        const label = document.querySelector('label')
+        console.log(label.for)
+        console.log(label.getAttribute('for'))
+        console.log(label.htmlFor)
+        console.log(label.getAttribute('htmlFor'))               
     </script>
 </body>
 
