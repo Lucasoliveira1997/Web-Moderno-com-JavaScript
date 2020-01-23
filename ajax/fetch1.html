@@ -8,9 +8,17 @@
 </head>
 
 <body class="conteudo exercicio">
-    <h1>Estados</h1>
+    <h1>Pacientes</h1>
 
     <script>
-        // ...
+        const url = 'https://api-pacientes.herokuapp.com/pacientes'
+
+        fetch(url)
+            .then(resp => resp.json())
+            .then(registros => {
+                const pacientes = registros.reduce((html, paciente) => html + `<li>${paciente.nome}</li>`, '')
+                           
+            document.body.insertAdjacentHTML('beforeend', `<ul>${pacientes}</ul>`)                           
+        })
     </script>
 </body>

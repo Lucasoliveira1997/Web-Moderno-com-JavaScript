@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/estilo.css">
+        <title>Pacientes JSON</title>
+    </head>
+
+    <body>
+        <h1> Pacientes </h1>
+
+        <script>
+
+            //configuração da unção Ajax
+            function ajax(config) {
+                const xhr = new XMLHttpRequest()
+
+                xhr.open(config.method, config.url, true)
+
+                xhr.onload = e => {
+                    if(xhr.status == 200) {
+                        config.sucesso(xhr.response)
+                    }
+                    else if (xhr.status >= 400) {
+                        config.erro({
+                            code: xhr.status,
+                            text: xhr.statusText
+                        })
+                    }
+                }
+
+                xhr.send()
+            }
+
+            //invocando a função 
+            ajax({
+                url: 'https://api-pacientes.herokuapp.com/pacientes',
+                method: 'get',
+                sucesso(resposta) {
+                    const pacientes = JSON.parse(resposta)
+                    console.log(pacientes)       
+                    
+                    //criando o HTML
+                    const linhas = pacientes.map(linha => {
+                        let tdNome = document.createElement('td')                     
+                        tdNome.innerHTML = linha.nome
+
+                        let tdPeso = document.createElement('td')                     
+                        tdPeso.innerHTML = linha.peso
+
+                        let tdAltura = document.createElement('td')                     
+                        tdAltura.innerHTML = linha.altura
+
+                        let tdGordura = document.createElement('td')
+                        tdGordura.innerHTML = linha.gordura
+
+                        let tdImc = document.createElement('td')                     
+                        tdImc.innerHTML = linha.imc
+
+                        let tr = document.createElement('tr')
+                        tr.appendChild(tdNome)
+                        tr.appendChild(tdPeso)
+                        tr.appendChild(tdAltura)
+                        tr.appendChild(tdGordura)
+                        tr.appendChild(tdImc)
+
+                        return tr
+                    })
+                    const table = document.createElement('table')
+                    linhas.forEach(linha =>{
+                        table.appendChild(linha)
+                    })
+                    document.body.appendChild(table)
+                },
+
+                erro(erro) {
+                    const msg = document.createTextNode(`${erro.code}: ${erro.text}`)
+                    document.body.appendChild(msg)
+                }
+
+            })
+            
+        </script>
+    </body>
+</html>

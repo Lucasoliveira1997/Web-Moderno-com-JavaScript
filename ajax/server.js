@@ -12,4 +12,11 @@ app.use(bodyParser.json())
 
 app.get('/teste', (req, resp) => resp.send({dataAtual: new Date}))
 
+app.post('/formulario', (req, resp) => {
+    resp.send({
+        ...req.body,
+        id: 1
+    })
+})
+
 app.listen(port, () => console.log(`Server is running on port ${port}`))
