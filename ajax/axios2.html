@@ -14,6 +14,11 @@
     <div id="post"></div>
 
     <script>
-        // ...
+        function exibeResultado(id, dados) {
+            const texto = JSON.stringify(dados)
+            document.getElementById(id).innerHTML = texto            
+        }
+
+        axios.get('ParImpar')
     </script>
 </body>

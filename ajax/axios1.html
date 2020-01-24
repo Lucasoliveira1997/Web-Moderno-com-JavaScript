@@ -9,9 +9,20 @@
 </head>
 
 <body class="conteudo exercicio">
-    <h1>Estados</h1>
+    <h1>Pacientes</h1>
 
     <script>
-        // ...
+        const url = 'https://api-pacientes.herokuapp.com/pacientes'
+
+        axios(url).then(resp => {            
+            let pacientes = resp.data.reduce((html, paciente) => {               
+                return html + `<li>${paciente.nome}</li>`
+            }, '')
+
+            console.log(pacientes)            
+            document.body.insertAdjacentHTML('beforeend', `<ul>${pacientes}</ul>`)        
+        }
+    )
+    
     </script>
 </body>
