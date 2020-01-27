@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Axios Teste</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/axios.js"></script>
+</head>
+
+<body>
+    <h1>Pacientes</h1>
+
+    <script>
+        const url = "https://api-pacientes.herokuapp.com/pacientes"
+
+        axios(url)
+            .then(resultado => {
+                console.log(resultado)                
+                const pacientes = resultado.data.reduce((html, paciente) => {                                       
+                    return html + `<li>${paciente.nome}</li>`
+              }, '')                       
+              document.body.insertAdjacentHTML('beforeend', `<ul>${pacientes}</ul>`)
+            })
+        
+    </script>
+</body>
+
+</html>

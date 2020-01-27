@@ -24,6 +24,7 @@ app.get('/parImpar', (req, resp) => {
     //req.query
     //req.params
     const par = parseInt(req.query.numero) % 2 == 0
+    resp.send({resultado: par ? 'par' : 'impar'})
 })
 
 app.listen(port, () => console.log(`Server is running on port ${port}`))
