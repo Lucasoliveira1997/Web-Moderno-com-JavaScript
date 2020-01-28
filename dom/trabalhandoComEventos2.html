@@ -17,7 +17,10 @@
 
         div.onmousemove = e => {
             div.style.cursor = 'move'
-            if(e.buttons)
-        }
+            if(e.buttons) {
+                e.target.style.top = `${e.clientY - (e.target.clientHeight / 2)}px`
+                e.target.style.left = `${e.clientX - (e.target.clientWidth / 2)}px`
+            }
+        }        
     </script>
 </body>
