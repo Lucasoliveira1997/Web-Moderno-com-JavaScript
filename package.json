@@ -1,0 +1,20 @@
+{
+  "name": "Web-Moderno-com-JavaScript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lucasoliveira1997/Web-Moderno-com-JavaScript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lucasoliveira1997/Web-Moderno-com-JavaScript/issues"
+  },
+  "homepage": "https://github.com/Lucasoliveira1997/Web-Moderno-com-JavaScript#readme"
+}
