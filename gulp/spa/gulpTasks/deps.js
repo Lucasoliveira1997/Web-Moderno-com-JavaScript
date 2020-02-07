@@ -5,11 +5,13 @@ const concat = require('gulp-concat')
 gulp.task('deps', ['deps.css', 'deps.fonts'])
 
 gulp.task('deps.css', () => {
-    gulp.src('node_modules/font-awesome/css/font-awesome.min.css')
-
-    
+    return gulp.src('node_modules/font-awesome/css/font-awesome.css')
+        .pipe(uglifycss({ "uglyComments" : true }))    
+        .pipe(concat('deps.min.css'))
+        .pipe(gulp.dest('build/assets/css'))
 })
 
 gulp.task('deps.fonts', () => {
-    
+    return gulp.src('node_modules/font-awesome/fonts/*.*') //caso necessário usar um array
+        .pipe(gulp.dest('build/assets/fonts'))
 })
