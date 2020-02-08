@@ -24,12 +24,13 @@ gulp.task('app.css', () => {
 
 gulp.task('app.js', () => {
     return gulp.src('src/assets/js/**/*.js')
-        .pipe(babel({ presets: env['env'] }))
+        .pipe(babel({ presets: ['env'] }))
         .pipe(uglify())
         .pipe(concat('app.min.js'))
-        .pipe(gulp.dest)
+        .pipe(gulp.dest('build/assets/js'))
 })
 
 gulp.task('app.imgs', () => {
-    
+    return gulp.src('src/assets/imgs/**/*.*')
+        .pipe(gulp.dest('build/assets/imgs'))
 })
