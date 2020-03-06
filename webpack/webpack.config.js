@@ -1,8 +1,11 @@
 const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const modoDev = process.env.NODE.ENV !== 'production'
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 module.exports = {
-    mode: 'development',
+    mode: modoDev ? 'development' : 'production',
     entry: './src/principal.js',
     output: {
         filename: 'principal.js',
@@ -13,6 +16,15 @@ module.exports = {
             filename: 'style.css'
         })
     ],
+    optimization: {
+        minimizer: [
+            new UglifyJsPlugin({
+                cache: true,
+                parallel: true
+            }),
+            new OptimizeCssAssetsPlugin({})
+        ]
+    },
     module: {
         rules: [{
             test: /\.s?[ac]ss/,

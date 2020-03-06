@@ -1,6 +1,6 @@
 import Pessoa from './pessoa'
 
-import './assets/css/style.css'
+import './assets'
 
 
 const atendente = new Pessoa
