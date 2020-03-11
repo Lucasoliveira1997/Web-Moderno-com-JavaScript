@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Testes Flex Box</title>
+
+        <style>            
+            .flex-container div{
+                background-color: lightsalmon;
+                border: 2px black solid;
+                font-size: 50px;
+            }
+
+            .flex-container {
+                width: 500px;
+                height: 500px;
+                border: tomato 2px solid;
+
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                align-items: center;                
+            }
+
+            .flex-container div:nth-child(2) {
+                align-self: flex-end;                
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="flex-container">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+    </body>
+</html>
