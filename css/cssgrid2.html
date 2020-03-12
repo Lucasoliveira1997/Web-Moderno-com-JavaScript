@@ -20,6 +20,32 @@
             border: solid 5px dodgerblue;
             background: #fff;
         }
+
+        body {
+            display: grid;
+            grid-template-columns: [inicio] 1fr [metade-1] 1fr [metade-2] 1fr [fim];
+            grid-template-rows: repeat(3, 1fr);
+
+            /*  grid-column-gap: 100px;
+                grid-row-gap: 100px;  -- OBSOLETO */  
+
+            column-gap: 70px;
+            row-gap: 50px;
+
+            gap: 10px 25px;
+        }
+
+        .d1 {
+            grid-column-start: metade-2;
+            grid-column-end: fim;
+            grid-column: 1 / fim;
+            grid-column: metade-1 / fim;
+
+            grid-row: 1 / span 2;
+
+            /* row-start column-start row-end column-end */
+            grid-area: 1 / metade-1 / span 2 / fim;
+        }
     </style>
 </head>
 
