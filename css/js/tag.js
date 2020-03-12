@@ -7,14 +7,15 @@ const colors = {
     ol: 'navy',
     padrao: '#616161',
     get(tag) {
-        console.log(this.p)        
-        return this[tag] ? this[tag] : this.padrao 
+        tag = this[tag]
+        console.log(tag)        
+        return tag       
     }
 }
 
 document.querySelectorAll('.tag').forEach(element => {
     const tagName = element.tagName.toLowerCase()
-
+  
     element.style.borderColor = colors.get(tagName)
 
     if(!element.classList.contains('nolabel')) {
