@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>teste Grid</title>
+    <style>
+            html,
+            body {
+                height: 100vh;
+            }
+
+            body {
+                display: grid;
+                grid-template-columns: 300px 1fr;
+                grid-template-rows: 100px 1fr 100px;
+                grid-template-areas:
+                    'cabecalho cabecalho'
+                    'navegacao conteudo'
+                    'rodape rodape';
+            }
+
+            header {
+                grid-area: cabecalho;
+                background-color: indianred;
+            }
+
+            main {
+                grid-area: conteudo;
+                background-color: indigo;
+            }
+
+            nav {
+                grid-area: navegacao;
+                background-color: lightgreen;
+            }
+
+            footer {
+                grid-area: rodape;
+                background-color: mediumpurple;
+            }
+
+            @media(max-width: 700px) {
+                body {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 100px 100px 1fr 100px;
+                    grid-template-areas: 'cabecalho' 'navegacao' 'conteudo' 'rodape';
+                }
+            }
+    </style>
+</head>
+
+<body>
+    <main>1</main>
+    <header>2</header>
+    <nav>3</nav>
+    <footer>4</footer>
+</body>
+
+</html>

@@ -6,10 +6,13 @@ const colors = {
     form: 'green',
     ol: 'navy',
     padrao: '#616161',
+    header: 'brown',
+    footer: 'red',
+    nav: 'yellow',
+    main: 'orange',
     get(tag) {
-        tag = this[tag]
         console.log(tag)        
-        return tag       
+        return this[tag] ? this[tag] : this.padrao
     }
 }
 
