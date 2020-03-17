@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Entendendo jQuery</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src="js/jquery.js"></script>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Entendendo jQuery</h1>
+    <div>1</div>
+    <div>2</div>
+
+    <script>
+        //$ ou jQuery
+        $.fn.mudaFundo = function() {
+            this.css('background-color', 'lightblue')
+            return this
+        }
+
+        $('body').mudaFundo()
+        $('div').css('color', 'blue').hide(2000).show(2000).fadeOut(2000)
+        console.log($('div').get(0))
+
+        console.log($.isEmptyObject({}))
+        console.log($.isEmptyObject({nome: 'Lucas'}))
+
+        console.log($.inArray(3, [1, 2, 3]))
+        console.log(jQuery.inArray(5, [1, 2, 3]))
+        
+
+    </script>
+</body>
