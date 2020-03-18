@@ -49,6 +49,26 @@
     </form>
 
     <script>
-        // ...
+        //Seletores
+        $('#feira').addClass('destaque').removeClass('destaque')
+        $('li').addClass('destaque')
+        $('[wm-obrigatorio]').removeClass('destaque')
+        $('li.opcional').removeClass('destaque')
+        $('div p span').addClass('destaque')
+
+        //filtros exclusivos do jQuery
+        $('li:first').css('border', 'solid 3px blue')
+        $('li:odd').css('border', 'solid 5px yellow')
+        $('li:gt(1)').css('color', 'lightgreen')
+        $('li:not(:last)').css('border', 'none')
+        $('li:contains(r)').css('background-color', 'black')
+
+        //filtros em formulário
+        $('form *').hide()
+        $('form :text').show()
+        $('form :password').show()
+        $('form :checkbox').show()
+        $('form :radio').show()
+        $('form :file').show()
     </script>
 </body>
