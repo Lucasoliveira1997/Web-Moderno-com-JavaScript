@@ -72,6 +72,12 @@ li {
 .exercicio div:nth-of-type(6) {
     background-color: salmon;
 }
+.exercicio div:nth-of-type(7) {
+    background-color: red;
+}
+.exercicio div:nth-of-type(8) {
+    background-color: yellow;
+}
 
 .exercicio .destaque {
     border: solid 10px greenyellow;

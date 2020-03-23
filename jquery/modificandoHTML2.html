@@ -13,13 +13,14 @@
     <div id='div1'>1</div>
     <div id='div2'>2</div>
     <div id='div3'>3</div>
+    
     <p class='numero'>4</p>
     <p class='numero'>5</p>
     <p class='numero2'>6</p>
     <p class='numero2'>7</p>
 
     <script>
-        $('#div1').append(', 2')
+        $('#div1').append(', 2')        
         $('#div1').prepend('0, ')
 
         $('<span>, 3</span>').appendTo('#div1')
@@ -34,6 +35,15 @@
         $('p.numero').wrap('<div>')
         $('p.numero2').wrapAll('<div id="div 4">')
 
+        $('#div3').empty()
+
+        $('#div2, #div3').prev().remove()
+
+        // $('<div>Substituto</div>').replaceAll('body > p')
+        // $('body > p').replaceWith('<div>Substituto</div>')
+        $('body > p').replaceWith(function() {
+            return $('<div>').html($(this).html()).append('!!!')
+        })
 
     </script>
 </body>
