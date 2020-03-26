@@ -17,9 +17,28 @@
     <h1>Eventos #01</h1>
     <div id='posicao'></div>
     <div id='cliques'>Cliques: 0</div>
-    <input type="text" placeholder="Cor de Background">
+    <input id='texto' type="text" placeholder="Cor de Background">
 
     <script>
-        // ...
+        function posicaoMouse(e) {
+            $('#posicao').html(`X: ${e.clientX} Y: ${e.clientY}`)                        
+        }
+
+        $('body').on('mousemove', posicaoMouse)
+        $('#posicao').mouseover(e => {
+            $('body').off('mousemove', posicaoMouse)
+        })
+        $('#posicao').mouseleave(e => {
+            $('body').mousemove(posicaoMouse)
+        })
+
+        let cliques = 0
+        $('#cliques').click(function() {
+            $('#cliques').html(`Cliques: ${++cliques}`)
+        })
+        
+        $('#texto').on('input', e => {       
+            $('body').css('background-color', e.target.value)
+        })
     </script>
 </body>

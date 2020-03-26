@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset='UTF-8'>
     <title>Eventos #02</title>
@@ -20,7 +19,19 @@
     <br>
     <input type="text" placeholder="Digite e Selecione">
     <div id="resultado2">?</div>
+
     <script>
-        // ...
+        const alternaClasse = () => $('#div1').toggleClass('destaque')
+        $('#div1').hover(alternaClasse, alternaClasse)
+
+        $('#div1').one('mouseenter', () => alert('Aviso IMPORTANTE: Obrigado'))
+        $('#div1').dblclick(e => $('#div1').fadeOut(1000).fadeIn(1000))
+
+        $(window).resize(e => {
+            console.log('Resize')            
+            const l = $(window).width()
+            const a = $(window).height()
+            $('#resultado1').html(`Àltura: ${a} | Largura: ${l}`)
+        })
     </script>
 </body>
