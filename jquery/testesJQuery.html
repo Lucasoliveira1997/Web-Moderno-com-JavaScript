@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testes Jquery</title>
+    <script src="js/jquery.js"></script>    
+</head>
+<body>
+    <div id="app">
+        <img id="dinossauro" src="../bootstrap/exercicios/imgs/img1.png" alt="Imagem de Dinossauro" >
+    </div>
+
+    <script>
+        const imagem = $('#dinossauro').attr('src')
+
+        $('#app').append($('<p>').html(imagem))
+
+        $('#app').append($('<p>').html($('#dinossauro.src')))
+        console.log($('#dinossauro'));
+        
+        
+    </script>
+</body>
+</html>

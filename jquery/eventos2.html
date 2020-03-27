@@ -33,5 +33,12 @@
             const a = $(window).height()
             $('#resultado1').html(`Àltura: ${a} | Largura: ${l}`)
         })
+
+        $(':input').select(e => {
+            const inicio = e.target.selectionStart
+            const fim = e.target.selectionEnd
+
+            $('#resultado2').html(e.target.value.substring(inicio, fim))
+        })
     </script>
 </body>

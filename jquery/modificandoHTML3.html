@@ -13,13 +13,23 @@
     <div id='conteudo'></div>
 
     <script>
-        const pessoas = [
-            { nome: 'Ana', nota: 9.1 },
-            { nome: 'Bianca', nota: 8.4 },
-            { nome: 'Carlos', nota: 7.6 },
-            { nome: 'Julia', nota: 9.7 }
-        ]
-        
-        // ...
+        $(function (){
+            const pessoas = [
+                { nome: 'Ana', nota: 9.1 },
+                { nome: 'Bianca', nota: 8.4 },
+                { nome: 'Carlos', nota: 7.6 },
+                { nome: 'Julia', nota: 9.7 }
+            ]
+
+            let linhas = pessoas.map(pessoa => {
+                let tdNome = $('<td>').append(pessoa.nome).css('border-right', 'solid 1px white')
+                let tdNota = $('<td>').append(pessoa.nota)
+
+                return $('<tr>').append(tdNome, tdNota)
+            })
+
+            let tabela = $('<table>').append(linhas)
+            $('#conteudo').append(tabela).css('border', 'solid 5px red')
+        })        
     </script>
 </body>
