@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>Requisitos de senha</title>
+
+    <style>
+        .incompleto {
+            color: red
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Senha</h1><br>
+    <input id="senha" type="text" placeholder="Digite sua senha"><br><br>
+    <input type="text" placeholder="Confirmação de senha">
+
+    <p id="maiuscula" class="incompleto">A senha deve conter uma letra maiúscula</p>
+    <p id="minuscula" class="incompleto">A senha deve conter uma letra minúscula</p>
+    <p id="numero" class="incompleto">A senha deve conter um numero</p>
+    <p id="especial" class="incompleto">A senha deve conter um caractér especial</p>
+
+    <script>
+        let numero = $('#numero')
+
+        let senha = $('#senha')
+
+        senha.keyup(e => {               
+            let caracter = e.target.value
+            let verificacao = (caracter).split('')
+            console.log(verificacao)            
+            verificacao.forEach(e => {
+                if(typeof(e) == String) {
+                    numero.html('funcionou')
+                }
+            })
+        })
+    </script>
+</body>
+</html>

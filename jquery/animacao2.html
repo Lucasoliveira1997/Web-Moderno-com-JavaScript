@@ -26,8 +26,53 @@
 
 <body>
     <div>Animar!</div>
+    <div>Animar!</div>
+    <div>Animar!</div>
 
     <script>
-        // ...
+        // funções: Aumentar - Diagonal - Girar
+
+        function aumentar(selector, value, timer) {
+            return new Promise((resolve, reject) => {
+                resolve($(selector).animate({ width: `+=${value}` }, timer))
+            })
+        }
+
+        function diagonal(selector, value, timer) {
+            return new Promise((resolve, reject) => {
+                resolve($(selector).animate({ left: `+=${value}`, top: `+=${value}` }, 5000)                )
+            })
+        }
+
+        function girar(selector, value, timer) {
+            return new Promise((resolve, reject) => {
+                resolve($(selector).animate({ transform: `+=${value}` }, {
+                    step: function (value) {
+                        $(this).css('transform', `rotate(${value}deg)`)
+                    },
+                    duration: timer
+                }, 'linear'))    
+                
+                reject(e => {
+                    console.log('Algo deu errado', e)                    
+                })
+            })
+        }       
+
+        aumentar('div', 700, 3000)
+            .then(aumentar('div', -700, 4000))
+            .then(diagonal('div', 300, 3000))
+            .then(girar('div', 3300, 3000))
+            .catch(e => {
+                console.log('Deu Ruim', e)                
+            })
+
+        // aumentar('div', 700, 3000, () => {
+        //     aumentar('div', -700, 'slow', () => {
+        //         diagonal('div', 300, 4000, () => {
+        //             girar('div', 3300, 5000)
+        //         })
+        //     })
+        // })
     </script>
 </body>
