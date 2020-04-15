@@ -1,0 +1,9 @@
+//Sass Files
+import './scss/index.scss'
+
+//Dependencies
+import 'jquery'
+import 'bootstrap'
+
+//My files JS
+import './js/core/includes'

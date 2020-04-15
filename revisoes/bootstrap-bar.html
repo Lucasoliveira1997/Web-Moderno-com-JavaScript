@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap Bar</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="d-flex flex-column align-items-center">
+        <h1>Teste Bootstrap</h1>
+        
+        <div style="width: 400px">
+            <div class="border border-dark progress" style="width: 100%">
+                <div id="progress-bar" class="progress-bar bg-success" style="width:0%">0%</div>
+            </div>
+        </div>
+
+        <div class="d-flex flex-row">
+            <button id="botaoInicio" class="btn m-3 btn-success">Iniciar!</button>
+            <button id="botaoFim" class="btn m-3 btn-warning">Parar!</button>
+        </div>
+    </div>
+
+    <script>
+        let barra = $('#progress-bar')
+        
+        let inicio = 0
+        
+        const carregaBarra = () => {
+            setInterval(() => {
+                if(inicio != 100) {
+                    barra.css('width', `${inicio++}%`)
+                    barra.html(`${inicio}%`)
+                }
+            }, 250)            
+        }        
+        
+        function paraBarra() {
+            console.log('parando...')
+            clearInterval(carregaBarra)
+        }
+        
+        let botaoInicia = $('#botaoInicio').click(carregaBarra)
+        let botaoFim = $('#botaoFim').click(paraBarra)
+
+        </script>
+</body>
+</html>
