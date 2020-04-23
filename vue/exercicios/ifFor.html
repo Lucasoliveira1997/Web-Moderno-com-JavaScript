@@ -7,7 +7,6 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="exercicio">
-
     <div id="app">
         <p v-for="(aluno, indice) in alunos">
             {{indice+1}}) {{aluno.nome}} - {{aluno.nota}}
@@ -16,7 +15,6 @@
             <span v-else-if="aluno.nota >= 3">Recuperação</span>
             <span v-else>Reprovado</span>
         </p>
-
     </div>
 
     <script>
