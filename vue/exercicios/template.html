@@ -8,8 +8,24 @@
 </head>
 <body class="exercicio">
     
+    <div id="app"></div>
+
     <script>
-        // ...
+        new Vue({
+            el: '#app',
+
+            data: {
+                titulo: 'Vue.Js',
+                subTitulo: 'Testando o Framework!!!'
+            },
+
+            template: `
+                <div>
+                    <h1>{{ titulo }}</h1>
+                    <p>{{ subTitulo }}</p>
+                </div>
+            `
+        })
     </script>
 </body>
 </html>
